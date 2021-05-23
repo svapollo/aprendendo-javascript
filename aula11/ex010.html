@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Encontrando brasileiros</h1>
+    Você nasceu em qual país? <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Analisar" onclick="localizar()">
+    <div id="res">
+
+    </div>
+    <script>
+        function localizar(){
+            var pais = window.document.querySelector('input#txtpais')
+            var res = window.document.getElementById('res')
+            var entrada = String(pais.value)
+            entrada = entrada[0].toUpperCase() + entrada.substr(1)
+            res.innerHTML = `<p>Seu país de origem é <strong>${entrada}</strong></p>`
+            
+            if (pais !== `Brasil`){
+                res.innerHTML += `<p>Você é Brasileira(o)! <strong>Seja Bem Vinda(o)</strong></p>`
+            } else {
+                res.innerHTML += `<p>Para nós brasileiros, você é estrangeira(o).</p><p><strong>Seja Bem vinda(o)</strong></p>`
+            }
+        }
+    </script>
+
+</body>
+</html>

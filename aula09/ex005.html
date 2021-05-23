@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body{
+            background: rgb(15, 129, 0);
+            color: whitesmoke;
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar <strong>DOM</strong> em JavaScript</p>
+    <!--<<div name="msg">Clique aqui</div>-->
+    <div id="msg">Clique aqui</div>
+    <script>
+        var p1 = window.document.getElementsByTagName("p")[1]
+        var corpo = window.document.body
+        window.document.write("Está escrito assim " + p1.innerText) // sem formatação - exemplo o strong
+        document.write("<br/>") // sempre posso omitir o window.
+        window.document.write("Está escrito assim " + p1.innerHTML) // com formatação - negrito do strong
+        corpo.style.background = "orange"
+        p1.style.color = "grey"
+        /*
+        var msg = document.getElementById("msg") //perigoso usar var aqui, obs quando for estudar ESCOPO
+        msg.style.background = "purple"
+        msg.innerText = "Texto modificado pelo JS"
+        window.document.getElementById("msg").innerText = "Mudei novamente, mas agora com uma linha de JS"
+        */
+        /*
+        var msg = document.getElementsByName("msg")[0]
+        msg.innerText = "Modifiquei o texto pelo Name, parece Classe ... Primeira vez que vejo"
+        */
+       var msg = document.querySelector("div#msg") // se fosse classe seria .msg
+       msg.style.background = "blue"
+    </script>
+</body>
+</html>
